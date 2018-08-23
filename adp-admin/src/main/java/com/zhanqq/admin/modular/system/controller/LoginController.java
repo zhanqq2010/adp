@@ -19,7 +19,7 @@ public class LoginController {
 
     @RequestMapping("/login")
     public JsonResult login(){
-   
+
 
         return ResultGenerator.genSuccessResult();
     }
