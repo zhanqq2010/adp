@@ -6,13 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="adp" />
         <module name="adp-admin" />
+        <module name="adp-generator" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="adp" target="1.5" />
+      <module name="adp" target="1.8" />
       <module name="adp-admin" target="1.8" />
+      <module name="adp-generator" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

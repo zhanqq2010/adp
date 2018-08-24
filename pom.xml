@@ -6,7 +6,86 @@
 
     <groupId>com.zhanqq</groupId>
     <artifactId>adp-parent</artifactId>
+    <packaging>pom</packaging>
     <version>1.0.0</version>
+    <modules>
+        <module>adp-generator</module>
+    </modules>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.4.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <adp.version>1.0.0</adp.version>
+        <mybatisplus-spring-boot-starter.version>3.0-beta</mybatisplus-spring-boot-starter.version>
+        <shiro.version>1.4.0</shiro.version>
+        <mybatis-plus.version>3.0-beta</mybatis-plus.version>
+        <fastjson.version>1.2.47</fastjson.version>
+        <velocity.version>2.0</velocity.version>
+        <kaptcha.version>2.3.2</kaptcha.version>
+        <ehcache.version>3.3.1</ehcache.version>
+        <zxing.version>3.2.1</zxing.version>
+        <druid.version>1.1.10</druid.version>
+        <beetl.version>2.8.5</beetl.version>
+        <swagger.version>2.9.2</swagger.version>
+        <commons-lang3.version>3.7</commons-lang3.version>
+        <ehcache.core.version>2.6.11</ehcache.core.version>
+        <mysql-connector-java.version>6.0.6</mysql-connector-java.version>
+        <jwt.version>0.9.0</jwt.version>
+        <hutool.version>4.1.1</hutool.version>
+        <freemarker.version>2.3.28</freemarker.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- 模板引擎 -->
+            <dependency>
+                <groupId>org.apache.velocity</groupId>
+                <artifactId>velocity-engine-core</artifactId>
+                <version>${velocity.version}</version>
+            </dependency>
+
+            <!-- 模板引擎，需要指定 mpg.setTemplateEngine(new FreemarkerTemplateEngine()); -->
+            <dependency>
+                <groupId>org.freemarker</groupId>
+                <artifactId>freemarker</artifactId>
+                <version>${freemarker.version}</version>
+            </dependency>
+
+            <!-- MP 核心库 -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
 
 
+            <!-- shiro依赖 -->
+            <dependency>
+                <groupId>org.apache.shiro</groupId>
+                <artifactId>shiro-spring</artifactId>
+                <version>${shiro.version}</version>
+            </dependency>
+
+            <!--阿里 FastJson依赖-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <!--阿里 Druid Spring Boot Starter依赖-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
