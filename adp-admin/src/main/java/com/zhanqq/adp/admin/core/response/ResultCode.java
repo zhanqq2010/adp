@@ -1,4 +1,4 @@
-package com.zhanqq.admin.core.response;
+package com.zhanqq.adp.admin.core.response;
 
 /**
  * @ClassName ResultCode

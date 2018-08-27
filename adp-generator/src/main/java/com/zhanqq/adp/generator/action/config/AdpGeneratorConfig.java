@@ -1,6 +1,7 @@
 package com.zhanqq.adp.generator.action.config;
 
 import com.baomidou.mybatisplus.annotation.DbType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.generator.config.GlobalConfig;
 import com.baomidou.mybatisplus.generator.config.converts.MySqlTypeConvert;
 import com.baomidou.mybatisplus.generator.config.rules.DbColumnType;
@@ -24,6 +25,7 @@ public class AdpGeneratorConfig extends AbstractGeneratorConfig {
     }
 
 
+
     /** 
      * 
      * 功能描述
@@ -34,14 +36,14 @@ public class AdpGeneratorConfig extends AbstractGeneratorConfig {
      * @return 
     **/
     protected void globalConfig() {
-        mGlobalConfig.setOutputDir("D://QQQ");
-        mGlobalConfig.setFileOverride(true);
-        mGlobalConfig.setActiveRecord(true);// 不需要ActiveRecord特性的请改为false
-        mGlobalConfig.setEnableCache(false);// XML 二级缓存
-        mGlobalConfig.setBaseResultMap(true);// XML ResultMap
-        mGlobalConfig.setBaseColumnList(false);// XML columList
+        globalConfig.setOutputDir("D://QQQ");
+        globalConfig.setFileOverride(true);
+        globalConfig.setActiveRecord(true);// 不需要ActiveRecord特性的请改为false
+        globalConfig.setEnableCache(false);// XML 二级缓存
+        globalConfig.setBaseResultMap(true);// XML ResultMap
+        globalConfig.setBaseColumnList(false);// XML columList
         // .setKotlin(true) 是否生成 kotlin 代码
-        mGlobalConfig.setAuthor("zhanqq");
+        globalConfig.setAuthor("zhanqq");
 
         // 自定义文件命名，注意 %s 会自动填充表实体属性！
         // gc.setMapperName("%sDao");
@@ -62,8 +64,8 @@ public class AdpGeneratorConfig extends AbstractGeneratorConfig {
      * @return 
     **/
     protected void dataSourceConfig() {
-        mDataSourceConfig.setDbType(DbType.MYSQL);
-        mDataSourceConfig.setTypeConvert(new MySqlTypeConvert(){
+        dataSourceConfig.setDbType(DbType.MYSQL);
+        dataSourceConfig.setTypeConvert(new MySqlTypeConvert(){
             // 自定义数据库表字段类型转换【可选】
             @Override
             public DbColumnType processTypeConvert(GlobalConfig globalConfig, String fieldType) {
@@ -74,10 +76,10 @@ public class AdpGeneratorConfig extends AbstractGeneratorConfig {
         });
 
 
-        mDataSourceConfig.setDriverName("com.mysql.cj.jdbc.Driver");
-        mDataSourceConfig.setUsername("root");
-        mDataSourceConfig.setPassword("123456");
-        mDataSourceConfig.setUrl("jdbc:mysql://127.0.0.1:3306/adp?characterEncoding=utf8&serverTimezone=GMT%2B8");
+        dataSourceConfig.setDriverName("com.mysql.cj.jdbc.Driver");
+        dataSourceConfig.setUsername("root");
+        dataSourceConfig.setPassword("123456");
+        dataSourceConfig.setUrl("jdbc:mysql://127.0.0.1:3306/adp?characterEncoding=utf8&serverTimezone=GMT%2B8");
 
     }
 
@@ -92,8 +94,8 @@ public class AdpGeneratorConfig extends AbstractGeneratorConfig {
     **/
     protected void strategyConfig() {
         // strategy.setCapitalMode(true);// 全局大写命名 ORACLE 注意
-        mStrategyConfig.setTablePrefix(new String[] {  "sys_" });// 此处可以修改为您的表前缀
-        mStrategyConfig.setNaming(NamingStrategy.underline_to_camel);// 表名生成策略
+        strategyConfig.setTablePrefix(new String[] {  "sys_" });// 此处可以修改为您的表前缀
+        strategyConfig.setNaming(NamingStrategy.underline_to_camel);// 表名生成策略
         // strategy.setInclude(new String[] { "user" }); // 需要生成的表
         // strategy.setExclude(new String[]{"test"}); // 排除生成的表
         // 自定义实体父类
@@ -119,14 +121,46 @@ public class AdpGeneratorConfig extends AbstractGeneratorConfig {
     }
 
     protected void packageConfig() {
-        mPackageConfig.setParent(null);
-        mPackageConfig.setEntity("com.zhanqq.adp.modular.system.model");
-        mPackageConfig.setMapper("com.zhanqq.adp.modular.system.dao");
-        mPackageConfig.setXml("com.zhanqq.adp.modular.system.dao.mapping");
+        packageConfig.setParent(null);
+        packageConfig.setEntity("com.zhanqq.adp.modular.system.model");
+        packageConfig.setMapper("com.zhanqq.adp.modular.system.dao");
+        packageConfig.setXml("com.zhanqq.adp.modular.system.dao.mapping");
 
     }
 
     protected void contextConfig() {
+        contextConfig.setProPackage("com.zhanqq.adp.admin");
+        contextConfig.setCoreBasePackage("com.zhanqq.adp.core");
+        contextConfig.setBizChBigName("字典管理");
+        contextConfig.setBizEnBigName("sysDict");
+        contextConfig.setModuleName("system");
+        contextConfig.setProjectPath("D:\\WorkSp\\javaWeb\\adp\\adp-admin");
+        contextConfig.setEntityName("SysDict");
+
+        sqlConfig.setParentMenuName(null);//这里写已有菜单的名称,当做父节点
+
+        //mybatis-plus 生成器开关
+        contextConfig.setEntitySwitch(true);
+        contextConfig.setDaoSwitch(true);
+        contextConfig.setServiceSwitch(true);
+
+        //adp 生成器开关
+        contextConfig.setControllerSwitch(true);
+        contextConfig.setIndexPageSwitch(true);
+        contextConfig.setAddPageSwitch(true);
+        contextConfig.setEditPageSwitch(true);
+        contextConfig.setJsSwitch(true);
+        contextConfig.setInfoJsSwitch(true);
+        contextConfig.setSqlSwitch(true);
+
+    }
+
+
+
+
+    @Override
+    public void doAdpGeneration() {
+//        AbstractTemplateEngine engine = new AdpGeneratorConfig();
 
     }
 }

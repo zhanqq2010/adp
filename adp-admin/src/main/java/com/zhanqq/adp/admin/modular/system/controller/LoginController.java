@@ -1,9 +1,7 @@
-package com.zhanqq.admin.modular.system.controller;
+package com.zhanqq.adp.admin.modular.system.controller;
 
-import com.sun.org.apache.bcel.internal.generic.RETURN;
-import com.zhanqq.admin.core.response.JsonResult;
-import com.zhanqq.admin.core.response.ResultGenerator;
-import org.apache.shiro.mgt.DefaultSecurityManager;
+import com.zhanqq.adp.admin.core.response.JsonResult;
+import com.zhanqq.adp.admin.core.response.ResultGenerator;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 

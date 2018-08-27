@@ -1,4 +1,4 @@
-package com.zhanqq.admin;
+package com.zhanqq.adp.admin;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

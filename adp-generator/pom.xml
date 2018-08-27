@@ -17,6 +17,13 @@
     </parent>
 
     <dependencies>
+
+        <dependency>
+            <groupId>com.zhanqq</groupId>
+            <artifactId>adp-core</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
         <!-- 模板引擎 -->
         <dependency>
             <groupId>org.apache.velocity</groupId>

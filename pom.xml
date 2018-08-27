@@ -10,6 +10,8 @@
     <version>1.0.0</version>
     <modules>
         <module>adp-generator</module>
+        <module>adp-admin</module>
+        <module>adp-core</module>
     </modules>
 
     <parent>

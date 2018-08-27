@@ -1,4 +1,4 @@
-package java.com.zhanqq.adp.core.util;
+package com.zhanqq.adp.core.util;
 
 /**
  * @ClassName ToolUtil

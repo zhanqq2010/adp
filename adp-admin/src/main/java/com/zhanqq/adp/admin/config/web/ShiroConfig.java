@@ -1,4 +1,4 @@
-package com.zhanqq.admin.config.web;
+package com.zhanqq.adp.admin.config.web;
 
 
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;

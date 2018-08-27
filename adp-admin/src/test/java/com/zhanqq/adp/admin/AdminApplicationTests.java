@@ -1,4 +1,4 @@
-package com.zhanqq.admin;
+package com.zhanqq.adp.admin;
 
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.SimpleAccount;
