@@ -8,8 +8,11 @@ package com.zhanqq.adp.generator.engine.config;
  * @Version 1.0
  **/
 public class ContextConfig {
+
+    private String templatePrefixPath = "adpTemplate/advanced";
     private String entityName;              //实体的名称
-    private String bizChBigName;//业务名称
+    private String bizChName;   //业务名称
+    private String bizEnName;   //业务英文名称
     private String bizEnBigName;//业务英文名称(大写)
     private String modelPackageName = "com.zhanqq.adp.admin.common.persistence.model";        //model的包名
     private String modelMapperPackageName = "com.zhanqq.adp.admin.common.persistence.dao";  //model的dao
@@ -49,13 +52,7 @@ public class ContextConfig {
         this.entityName = entityName;
     }
 
-    public String getBizChBigName() {
-        return bizChBigName;
-    }
 
-    public void setBizChBigName(String bizChBigName) {
-        this.bizChBigName = bizChBigName;
-    }
 
     public String getBizEnBigName() {
         return bizEnBigName;
@@ -191,5 +188,31 @@ public class ContextConfig {
 
     public void setSqlSwitch(Boolean sqlSwitch) {
         this.sqlSwitch = sqlSwitch;
+    }
+
+
+    public String getBizChName() {
+        return bizChName;
+    }
+
+    public void setBizChName(String bizChName) {
+        this.bizChName = bizChName;
+    }
+
+    public String getBizEnName() {
+        return bizEnName;
+    }
+
+    public void setBizEnName(String bizEnName) {
+        this.bizEnName = bizEnName;
+    }
+
+
+    public String getTemplatePrefixPath() {
+        return templatePrefixPath;
+    }
+
+    public void setTemplatePrefixPath(String templatePrefixPath) {
+        this.templatePrefixPath = templatePrefixPath;
     }
 }

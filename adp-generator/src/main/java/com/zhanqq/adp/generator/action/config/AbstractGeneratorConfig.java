@@ -6,11 +6,15 @@ import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
 import com.baomidou.mybatisplus.generator.config.GlobalConfig;
 import com.baomidou.mybatisplus.generator.config.PackageConfig;
 import com.baomidou.mybatisplus.generator.config.StrategyConfig;
+import com.baomidou.mybatisplus.generator.config.po.TableInfo;
 import com.zhanqq.adp.core.util.FileUtil;
+import com.zhanqq.adp.generator.engine.SimpleTemplateEngine;
+import com.zhanqq.adp.generator.engine.base.AbstractTemplateEngine;
 import com.zhanqq.adp.generator.engine.config.ContextConfig;
 import com.zhanqq.adp.generator.engine.config.SqlConfig;
 
 import java.io.File;
+import java.util.List;
 
 /**
  * @ClassName AbstractGeneratorConfig
@@ -35,6 +39,8 @@ public abstract class AbstractGeneratorConfig {
 
     SqlConfig sqlConfig = new SqlConfig();
 
+    TableInfo tableInfo = null;
+
     public void doMpGeneration() {
         init();
         autoGenerator.setGlobalConfig(globalConfig);
@@ -43,13 +49,19 @@ public abstract class AbstractGeneratorConfig {
         autoGenerator.setPackageInfo(packageConfig);
         autoGenerator.execute();
         destory();
+
+        //获取table信息,用于guns代码生成
+        List<TableInfo> tableInfoList = autoGenerator.getConfig().getTableInfoList();
+        if(tableInfoList != null && tableInfoList.size() >  0){
+            this.tableInfo = tableInfoList.get(0);
+        }
     }
 
     /**
      * 删除不必要的代码
      */
     private void destory() {
-        String outputDir = globalConfig.getOutputDir() + "/TTT";
+        String outputDir = globalConfig.getOutputDir() + "/QQQ";
         FileUtil.deleteDir(new File(outputDir));
     }
 
@@ -59,26 +71,33 @@ public abstract class AbstractGeneratorConfig {
         packageConfig.setService(contextConfig.getProPackage() +  ".modular." + contextConfig.getModuleName() + ".service");
         packageConfig.setServiceImpl(contextConfig.getProPackage() + ".modular." + contextConfig.getModuleName() + ".service.impl");
         //controller没用掉,生成之后会自动删掉
-        packageConfig.setController("TTT");
+        packageConfig.setController("QQQ");
 
 
         if (!contextConfig.getEntitySwitch()) {
-            packageConfig.setEntity("TTT");
+            packageConfig.setEntity("QQQ");
         }
 
         if (!contextConfig.getDaoSwitch()) {
-            packageConfig.setMapper("TTT");
-            packageConfig.setXml("TTT");
+            packageConfig.setMapper("QQQ");
+            packageConfig.setXml("QQQ");
         }
 
         if (!contextConfig.getServiceSwitch()) {
-            packageConfig.setService("TTT");
-            packageConfig.setServiceImpl("TTT");
+            packageConfig.setService("QQQ");
+            packageConfig.setServiceImpl("QQQ");
         }
 
     }
 
     protected abstract void config();
 
-    public abstract void doAdpGeneration();
+    public void doAdpGeneration(){
+        AbstractTemplateEngine engine = new SimpleTemplateEngine();
+        engine.setContextConfig(contextConfig);
+        sqlConfig.setConnection(dataSourceConfig.getConn());
+        engine.setSqlConfig(sqlConfig);
+        engine.setTableInfo(tableInfo);
+        engine.start();
+    }
 }

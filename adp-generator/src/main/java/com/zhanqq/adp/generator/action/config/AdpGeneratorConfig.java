@@ -1,10 +1,8 @@
 package com.zhanqq.adp.generator.action.config;
 
-import com.baomidou.mybatisplus.annotation.DbType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.generator.config.GlobalConfig;
 import com.baomidou.mybatisplus.generator.config.converts.MySqlTypeConvert;
 import com.baomidou.mybatisplus.generator.config.rules.DbColumnType;
+import com.baomidou.mybatisplus.generator.config.rules.DbType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 
 /**
@@ -68,10 +66,10 @@ public class AdpGeneratorConfig extends AbstractGeneratorConfig {
         dataSourceConfig.setTypeConvert(new MySqlTypeConvert(){
             // 自定义数据库表字段类型转换【可选】
             @Override
-            public DbColumnType processTypeConvert(GlobalConfig globalConfig, String fieldType) {
+            public DbColumnType processTypeConvert(String fieldType) {
                 System.out.println("转换类型：" + fieldType);
                 // 注意！！processTypeConvert 存在默认类型转换，如果不是你要的效果请自定义返回、非如下直接返回。
-                return super.processTypeConvert(globalConfig,fieldType);
+                return super.processTypeConvert(fieldType);
             }
         });
 
@@ -122,16 +120,16 @@ public class AdpGeneratorConfig extends AbstractGeneratorConfig {
 
     protected void packageConfig() {
         packageConfig.setParent(null);
-        packageConfig.setEntity("com.zhanqq.adp.modular.system.model");
-        packageConfig.setMapper("com.zhanqq.adp.modular.system.dao");
-        packageConfig.setXml("com.zhanqq.adp.modular.system.dao.mapping");
+        packageConfig.setEntity("com.zhanqq.adp.admin.modular.system.model");
+        packageConfig.setMapper("com.zhanqq.adp.admin.modular.system.dao");
+        packageConfig.setXml("com.zhanqq.adp.admin.modular.system.dao.mapping");
 
     }
 
     protected void contextConfig() {
         contextConfig.setProPackage("com.zhanqq.adp.admin");
         contextConfig.setCoreBasePackage("com.zhanqq.adp.core");
-        contextConfig.setBizChBigName("字典管理");
+        contextConfig.setBizChName("字典管理");
         contextConfig.setBizEnBigName("sysDict");
         contextConfig.setModuleName("system");
         contextConfig.setProjectPath("D:\\WorkSp\\javaWeb\\adp\\adp-admin");
