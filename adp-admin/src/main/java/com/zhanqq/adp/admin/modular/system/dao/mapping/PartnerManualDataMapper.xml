@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhanqq.adp.admin.modular.system.dao.PartnerManualDataMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.zhanqq.adp.admin.modular.system.model.PartnerManualData">
+        <id column="id" property="id" />
+        <result column="cpid" property="cpid" />
+        <result column="sid" property="sid" />
+        <result column="cpType" property="cpType" />
+        <result column="cpsRate" property="cpsRate" />
+        <result column="cpsTotal" property="cpsTotal" />
+        <result column="cpaPrice" property="cpaPrice" />
+        <result column="cpaCount" property="cpaCount" />
+        <result column="dataDate" property="dataDate" />
+        <result column="createTime" property="createTime" />
+        <result column="userId" property="userId" />
+        <result column="isCpaPrice" property="isCpaPrice" />
+        <result column="moneytype" property="moneytype" />
+    </resultMap>
+
+</mapper>
