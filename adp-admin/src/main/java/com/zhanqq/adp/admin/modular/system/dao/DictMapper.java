@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.mapper.BaseMapper;
  * </p>
  *
  * @author zhanqq
- * @since 2018-08-28
+ * @since 2018-08-30
  */
 public interface DictMapper extends BaseMapper<Dict> {
 

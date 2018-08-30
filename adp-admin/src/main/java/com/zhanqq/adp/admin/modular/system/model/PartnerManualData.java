@@ -13,7 +13,7 @@ import java.io.Serializable;
  * </p>
  *
  * @author zhanqq
- * @since 2018-08-28
+ * @since 2018-08-30
  */
 @TableName("sys_partner_manual_data")
 public class PartnerManualData extends Model<PartnerManualData> {

@@ -19,6 +19,11 @@
 	</parent>
 
 	<dependencies>
+
+		<dependency>
+			<groupId>com.zhanqq</groupId>
+			<artifactId>adp-core</artifactId>
+		</dependency>
 		<!--Spring Boot依赖-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -64,13 +69,18 @@
 		<!--阿里 Druid Spring Boot Starter依赖-->
 		<dependency>
 			<groupId>com.alibaba</groupId>
-			<artifactId>druid-spring-boot-starter</artifactId>
-
+			<artifactId>druid</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>com.baomidou</groupId>
 			<artifactId>mybatis-plus-support</artifactId>
 			<version>RELEASE</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>com.baomidou</groupId>
+			<artifactId>mybatisplus-spring-boot-starter</artifactId>
 		</dependency>
 
 

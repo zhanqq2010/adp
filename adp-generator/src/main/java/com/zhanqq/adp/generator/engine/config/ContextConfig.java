@@ -1,5 +1,7 @@
 package com.zhanqq.adp.generator.engine.config;
 
+import com.zhanqq.adp.core.util.ToolUtil;
+
 /**
  * @ClassName ContextConfig
  * @Description TODO
@@ -205,6 +207,7 @@ public class ContextConfig {
 
     public void setBizEnName(String bizEnName) {
         this.bizEnName = bizEnName;
+        this.bizEnBigName = ToolUtil.firstLetterToUpper(this.bizEnName);
     }
 
 

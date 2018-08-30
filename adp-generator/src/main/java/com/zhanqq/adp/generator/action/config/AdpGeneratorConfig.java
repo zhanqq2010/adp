@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.generator.config.converts.MySqlTypeConvert;
 import com.baomidou.mybatisplus.generator.config.rules.DbColumnType;
 import com.baomidou.mybatisplus.generator.config.rules.DbType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
+import com.zhanqq.adp.generator.engine.SimpleTemplateEngine;
+import com.zhanqq.adp.generator.engine.base.AbstractTemplateEngine;
 
 /**
  * @ClassName AdpGeneratorConfig
@@ -34,7 +36,7 @@ public class AdpGeneratorConfig extends AbstractGeneratorConfig {
      * @return 
     **/
     protected void globalConfig() {
-        globalConfig.setOutputDir("D://QQQ");
+        globalConfig.setOutputDir("D:\\workSp\\java\\adp\\adp-admin\\src\\main\\java");
         globalConfig.setFileOverride(true);
         globalConfig.setActiveRecord(true);// 不需要ActiveRecord特性的请改为false
         globalConfig.setEnableCache(false);// XML 二级缓存
@@ -130,10 +132,10 @@ public class AdpGeneratorConfig extends AbstractGeneratorConfig {
         contextConfig.setProPackage("com.zhanqq.adp.admin");
         contextConfig.setCoreBasePackage("com.zhanqq.adp.core");
         contextConfig.setBizChName("字典管理");
-        contextConfig.setBizEnBigName("sysDict");
+        contextConfig.setBizEnName("Dict");
         contextConfig.setModuleName("system");
-        contextConfig.setProjectPath("D:\\WorkSp\\javaWeb\\adp\\adp-admin");
-        contextConfig.setEntityName("SysDict");
+        contextConfig.setProjectPath("D:\\WorkSp\\java\\adp\\adp-admin");
+        contextConfig.setEntityName("Dict");
 
         sqlConfig.setParentMenuName(null);//这里写已有菜单的名称,当做父节点
 
@@ -156,9 +158,5 @@ public class AdpGeneratorConfig extends AbstractGeneratorConfig {
 
 
 
-    @Override
-    public void doAdpGeneration() {
-//        AbstractTemplateEngine engine = new AdpGeneratorConfig();
 
-    }
 }

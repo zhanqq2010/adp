@@ -7,12 +7,12 @@ import ${import};
 /**
  * ${context.bizChName}控制器
  *
- * @author fengshuonan
+ * @author zhanqq
  * @Date ${tool.currentTime()}
  */
 @Controller
 @RequestMapping("/${context.bizEnName}")
-public class ${context.bizEnBigName}Controller extends BaseController {
+public class ${context.bizEnName}Controller extends BaseController {
 
     private String PREFIX = "/${context.moduleName}/${context.bizEnName}/";
 

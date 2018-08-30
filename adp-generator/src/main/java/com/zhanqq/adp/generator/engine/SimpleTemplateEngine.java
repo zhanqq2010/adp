@@ -1,15 +1,7 @@
 package com.zhanqq.adp.generator.engine;
 
-import com.sun.javafx.PlatformUtil;
 import com.zhanqq.adp.core.util.ToolUtil;
 import com.zhanqq.adp.generator.engine.base.AdpTemplateEngine;
-import org.beetl.core.GroupTemplate;
-import org.beetl.core.Template;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
 
 /**
  * @ClassName SimpleTemplateEngine
@@ -19,8 +11,6 @@ import java.io.IOException;
  * @Version 1.0
  **/
 public class SimpleTemplateEngine extends AdpTemplateEngine {
-
-    private GroupTemplate groupTemplate;
 
     @Override
     protected void generatePageEditHtml() {
@@ -78,41 +68,8 @@ public class SimpleTemplateEngine extends AdpTemplateEngine {
         System.out.println("生成sql成功!");
     }
 
-    protected void generateFile(String template, String filePath) {
-        Template pageTemplate = groupTemplate.getTemplate(template);
-        configTemplate(pageTemplate);
-        if (PlatformUtil.isWindows()) {
-            filePath = filePath.replaceAll("/+|\\\\+", "\\\\");
-        } else {
-            filePath = filePath.replaceAll("/+|\\\\+", "/");
-        }
-        File file = new File(filePath);
-        File parentFile = file.getParentFile();
-        if (!parentFile.exists()) {
-            parentFile.mkdirs();
-        }
-        FileOutputStream fileOutputStream = null;
-        try {
-            fileOutputStream = new FileOutputStream(file);
-            pageTemplate.renderTo(fileOutputStream);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                fileOutputStream.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
 
 
-    protected void configTemplate(Template template) {
-        template.binding("controller", super.controllerConfig);
-        template.binding("context", super.contextConfig);
-        template.binding("dao", super.daoConfig);
-        template.binding("service", super.serviceConfig);
-        template.binding("sqls", super.sqlConfig);
-        template.binding("table", super.tableInfo);
-    }
+
+
 }

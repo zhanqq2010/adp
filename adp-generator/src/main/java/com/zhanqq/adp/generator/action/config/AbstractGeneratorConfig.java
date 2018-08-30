@@ -92,7 +92,7 @@ public abstract class AbstractGeneratorConfig {
 
     protected abstract void config();
 
-    public void doAdpGeneration(){
+    public void doAdpGeneration() {
         AbstractTemplateEngine engine = new SimpleTemplateEngine();
         engine.setContextConfig(contextConfig);
         sqlConfig.setConnection(dataSourceConfig.getConn());
