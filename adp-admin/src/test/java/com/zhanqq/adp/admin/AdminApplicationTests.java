@@ -18,7 +18,7 @@ import javax.lang.model.element.VariableElement;
 @SpringBootTest
 public class AdminApplicationTests {
 
-	SimpleAccountRealm simpleAccountRealm = new SimpleAccountRealm();
+//	SimpleAccountRealm simpleAccountRealm = new SimpleAccountRealm();
 
 	@Test
 	public void contextLoads() {
@@ -26,27 +26,27 @@ public class AdminApplicationTests {
 
 	@Before
 	public void addUser(){
-		simpleAccountRealm.addAccount("zhanqq", "123456", "admin");
+//		simpleAccountRealm.addAccount("zhanqq", "123456", "admin");
 	}
 
 	@Test
 	public void testAuthentication(){
 
-		//1.构建SecurityManager环境
-		DefaultSecurityManager defaultSecurityManager = new DefaultSecurityManager();
-		defaultSecurityManager.setRealm(simpleAccountRealm);
-		//2. 主题提交认证请求
-		SecurityUtils.setSecurityManager(defaultSecurityManager);
-		Subject subject = SecurityUtils.getSubject();
-
-
-		UsernamePasswordToken token = new UsernamePasswordToken("zhanqq", "123456");
-		subject.login(token);
-
-		System.out.println("isAuthenticated = " + subject.isAuthenticated());
-		//3.
-
-		subject.checkRole("admin");
+//		//1.构建SecurityManager环境
+//		DefaultSecurityManager defaultSecurityManager = new DefaultSecurityManager();
+//		defaultSecurityManager.setRealm(simpleAccountRealm);
+//		//2. 主题提交认证请求
+//		SecurityUtils.setSecurityManager(defaultSecurityManager);
+//		Subject subject = SecurityUtils.getSubject();
+//
+//
+//		UsernamePasswordToken token = new UsernamePasswordToken("zhanqq", "123456");
+//		subject.login(token);
+//
+//		System.out.println("isAuthenticated = " + subject.isAuthenticated());
+//		//3.
+//
+//		subject.checkRole("admin");
 	}
 
 }
