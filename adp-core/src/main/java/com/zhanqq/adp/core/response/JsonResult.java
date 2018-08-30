@@ -1,4 +1,4 @@
-package com.zhanqq.adp.admin.core.response;
+package com.zhanqq.adp.core.response;
 
 import com.alibaba.fastjson.JSON;
 

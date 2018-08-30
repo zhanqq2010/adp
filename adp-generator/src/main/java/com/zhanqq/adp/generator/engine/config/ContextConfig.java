@@ -16,8 +16,8 @@ public class ContextConfig {
     private String bizChName;   //业务名称
     private String bizEnName;   //业务英文名称
     private String bizEnBigName;//业务英文名称(大写)
-    private String modelPackageName = "com.zhanqq.adp.admin.common.persistence.model";        //model的包名
-    private String modelMapperPackageName = "com.zhanqq.adp.admin.common.persistence.dao";  //model的dao
+    private String modelPackageName = "com.zhanqq.adp.admin.adp.admin.modular.system.model";        //model的包名
+    private String modelMapperPackageName = "com.zhanqq.adp.admin.adp.admin.modular.system.dao";  //model的dao
     private String proPackage = "com.zhanqq.adp.admin";
     private String coreBasePackage = "com.zhanqq.adp.core";
     private String projectPath = "D:\\QQQ";//模板输出的项目目录
@@ -41,8 +41,8 @@ public class ContextConfig {
         if(entityName != null){
             this.entityName = bizEnBigName;
         }
-        this.modelPackageName = proPackage + "." + "common.persistence.model";
-        this.modelMapperPackageName = proPackage + "." + "common.persistence.dao";
+        this.modelPackageName = proPackage + "." + "modular.system.model";
+        this.modelMapperPackageName = proPackage + "." + "modular.system.dao";
 
     }
 

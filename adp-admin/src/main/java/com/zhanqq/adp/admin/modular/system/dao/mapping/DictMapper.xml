@@ -9,7 +9,6 @@
         <result column="pid" property="pid" />
         <result column="name" property="name" />
         <result column="tips" property="tips" />
-        <result column="code" property="code" />
     </resultMap>
 
 </mapper>

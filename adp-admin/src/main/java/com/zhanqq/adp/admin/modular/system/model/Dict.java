@@ -40,10 +40,6 @@ public class Dict extends Model<Dict> {
      * 提示
      */
     private String tips;
-    /**
-     * 值
-     */
-    private String code;
 
 
     public Integer getId() {
@@ -86,14 +82,6 @@ public class Dict extends Model<Dict> {
         this.tips = tips;
     }
 
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
     @Override
     protected Serializable pkVal() {
         return this.id;
@@ -107,7 +95,6 @@ public class Dict extends Model<Dict> {
         ", pid=" + pid +
         ", name=" + name +
         ", tips=" + tips +
-        ", code=" + code +
         "}";
     }
 }

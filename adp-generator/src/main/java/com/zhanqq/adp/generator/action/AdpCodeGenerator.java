@@ -22,7 +22,7 @@ public class AdpCodeGenerator {
         AbstractGeneratorConfig config = new AdpGeneratorConfig();
         config.doMpGeneration();
 
-        config.doAdpGeneration();
+//        config.doAdpGeneration();
 
 
     }
