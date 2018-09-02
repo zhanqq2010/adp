@@ -1,7 +1,10 @@
 package com.zhanqq.adp.modular.system.service;
 
+import com.zhanqq.adp.core.node.MenuNode;
 import com.zhanqq.adp.modular.system.model.Menu;
 import com.baomidou.mybatisplus.service.IService;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +16,5 @@ import com.baomidou.mybatisplus.service.IService;
  */
 public interface IMenuService extends IService<Menu> {
 
+   public List<MenuNode> getMenusByRoleIds(List<Integer> roleIds);
 }
