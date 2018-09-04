@@ -9,7 +9,6 @@ import com.zhanqq.adp.modular.system.model.User;
 import com.zhanqq.adp.modular.system.service.IMenuService;
 import com.zhanqq.adp.modular.system.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.ehcache.EhCacheManagerFactoryBean;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -35,7 +34,7 @@ public class LoginController extends BaseController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index(Model model) {
-        EhCacheManagerFactoryBean d;
+
         //获取菜单列表
         List<Integer> roleList = ShiroKit.getUser().getRoleList();
         if (roleList == null || roleList.size() == 0) {
