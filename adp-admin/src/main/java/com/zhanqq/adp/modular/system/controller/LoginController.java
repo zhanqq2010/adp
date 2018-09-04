@@ -24,12 +24,14 @@ public class LoginController extends BaseController {
 
     private IUserService userService;
 
-    @RequestMapping("login")
-    public JsonResult login() {
+    @RequestMapping(value = "login", method = RequestMethod.GET)
+    public String login() {
         //权限
+        if(ShiroKit.isAuthenticated() || ShiroKit.getUser() != null){
+            return  REDIRECT + "/";
+        }
 
-
-        return SUCCESS_TIP;
+        return "/login";
     }
 
     @RequestMapping(value = "/", method = RequestMethod.GET)

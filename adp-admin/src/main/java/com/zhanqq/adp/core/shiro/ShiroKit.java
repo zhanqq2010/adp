@@ -51,4 +51,12 @@ public class ShiroKit {
     public static Session getSession() {
         return getSubject().getSession();
     }
+
+    /**
+     * 已认证通过的用户。不包含已记住的用户，这是与user标签的区别所在。与notAuthenticated搭配使用
+     * @return
+     */
+    public static boolean isAuthenticated() {
+        return getSubject() != null && getSubject().isAuthenticated();
+    }
 }
