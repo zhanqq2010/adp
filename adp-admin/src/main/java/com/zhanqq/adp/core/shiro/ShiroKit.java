@@ -13,7 +13,7 @@ public class ShiroKit {
 
 
     public static ShiroUser getUser() {
-        if (!isGuest()) {
+        if (isGuest()) {
             return null;
         }
         return (ShiroUser) getSubject().getPrincipals().getPrimaryPrincipal();
