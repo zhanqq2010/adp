@@ -19,10 +19,10 @@ spring:
     db-name: adp #用来搜集数据库的所有表
     filters: wall,mergeStat
     driver-class-name: com.mysql.cj.jdbc.Driver
-  mvc:
-    view:
-      prefix: /WEB-INF/views/
-      suffix: .html
+#  mvc:
+#    view:
+#      prefix: /WEB-INF/view
+#      suffix: .html
 
 
 

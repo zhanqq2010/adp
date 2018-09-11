@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="adp-admin" />
+        <module name="adp-api" />
         <module name="adp-core" />
         <module name="adp-generator" />
       </profile>
@@ -14,6 +15,7 @@
     <bytecodeTargetLevel>
       <module name="adp" target="1.8" />
       <module name="adp-admin" target="1.8" />
+      <module name="adp-api" target="1.8" />
       <module name="adp-core" target="1.8" />
       <module name="adp-generator" target="1.8" />
     </bytecodeTargetLevel>

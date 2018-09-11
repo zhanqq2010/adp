@@ -31,7 +31,7 @@ public class LoginController extends BaseController {
             return  REDIRECT + "/";
         }
 
-        return "/login.html";
+        return "login";
     }
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
