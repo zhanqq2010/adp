@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/adp-api/adp-api.iml" filepath="$PROJECT_DIR$/adp-api/adp-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/adp-core/adp-core.iml" filepath="$PROJECT_DIR$/adp-core/adp-core.iml" />
       <module fileurl="file://$PROJECT_DIR$/adp-generator/adp-generator.iml" filepath="$PROJECT_DIR$/adp-generator/adp-generator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/adp-api/api.iml" filepath="$PROJECT_DIR$/adp-api/api.iml" />
     </modules>
   </component>
 </project>

@@ -143,8 +143,8 @@ public class ShiroConfig {
         /**
          * 没有权限跳转的url
          */
-//        shiroFilter.setUnauthorizedUrl("/global/error");
-        shiroFilter.setUnauthorizedUrl("/error2");
+        shiroFilter.setUnauthorizedUrl("/global/error");
+//        shiroFilter.setUnauthorizedUrl("/error2");
 
 
 

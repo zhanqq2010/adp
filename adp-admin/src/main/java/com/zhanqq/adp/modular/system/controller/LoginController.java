@@ -12,6 +12,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.DispatcherServlet;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.View;
 
 import java.util.List;
 
@@ -24,12 +27,18 @@ public class LoginController extends BaseController {
     @Autowired
     private IUserService userService;
 
+    @Autowired
+    DispatcherServlet dispatcherServlet;
+
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login() {
+
+
         //权限
-        if(ShiroKit.isAuthenticated() || ShiroKit.getUser() != null){
-            return  REDIRECT + "/";
-        }
+//        if(ShiroKit.isAuthenticated() || ShiroKit.getUser() != null){
+//
+//            return  REDIRECT + "/";
+//        }
 
         return "login";
     }

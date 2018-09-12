@@ -23,6 +23,11 @@ spring:
 #    view:
 #      prefix: /WEB-INF/view
 #      suffix: .html
+  mvc:
+    static-path-pattern: /static/**
+    view:
+      prefix: /WEB-INF/view
+      suffix: .html
 
 
 
