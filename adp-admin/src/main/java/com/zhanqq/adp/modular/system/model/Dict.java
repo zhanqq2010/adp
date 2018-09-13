@@ -22,7 +22,7 @@ public class Dict extends Model<Dict> {
     /**
      * 主键id
      */
-    @TableId(value = "id", type = IdType.AUTO)
+    @TableId(value="id", type= IdType.AUTO)
     private Integer id;
     /**
      * 排序
@@ -36,6 +36,11 @@ public class Dict extends Model<Dict> {
      * 名称
      */
     private String name;
+
+    /**
+     * 编码
+     */
+    private String code;
     /**
      * 提示
      */
@@ -87,14 +92,23 @@ public class Dict extends Model<Dict> {
         return this.id;
     }
 
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
     @Override
     public String toString() {
         return "Dict{" +
-        "id=" + id +
-        ", num=" + num +
-        ", pid=" + pid +
-        ", name=" + name +
-        ", tips=" + tips +
-        "}";
+                "id=" + id +
+                ", num=" + num +
+                ", pid=" + pid +
+                ", name='" + name + '\'' +
+                ", code='" + code + '\'' +
+                ", tips='" + tips + '\'' +
+                '}';
     }
 }

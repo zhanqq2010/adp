@@ -40,7 +40,7 @@ public class LoginController extends BaseController {
 //            return  REDIRECT + "/";
 //        }
 
-        return "login";
+        return "login.html";
     }
 
     @RequestMapping(value = "/", method = RequestMethod.GET)

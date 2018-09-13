@@ -1,0 +1,16 @@
+# 开发环境配置
+server:
+  port: 8080
+
+
+
+
+
+  mvc:
+    static-path-pattern: /static/**
+    view:
+      prefix: /WEB-INF/templates/
+      suffix: .html
+
+
+

@@ -11,4 +11,11 @@
         <result column="tips" property="tips" />
     </resultMap>
 
+    <select id="selectByParentCode" resultType="dict">
+        select
+        <include refid="Base_Column_List"/>
+        from sys_dict
+        where pid in(select id  from sys_dict where code = #{code}) order by num asc
+    </select>
+
 </mapper>

@@ -6,6 +6,9 @@ import com.zhanqq.adp.modular.system.service.IDictService;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
+import java.util.List;
+
 /**
  * <p>
  * 字典表 服务实现类
@@ -17,4 +20,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class DictServiceImpl extends ServiceImpl<DictMapper, Dict> implements IDictService {
 
+    @Resource
+    private DictMapper dictMapper;
+
+    @Override
+    public List<Dict> selectByParentCode(String code) {
+        return this.baseMapper.selectByParentCode(code);
+    }
 }

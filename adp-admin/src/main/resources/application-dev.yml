@@ -26,8 +26,8 @@ spring:
   mvc:
     static-path-pattern: /static/**
     view:
-      prefix: /WEB-INF/view
-      suffix: .html
+      prefix: /WEB-INF/view/
+#      suffix: .html
 
 
 
